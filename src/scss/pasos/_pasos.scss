@@ -1,0 +1,40 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.pasos__contenido{
+    background-color: v.$primario;
+
+    h2{
+        color: v.$blanco;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+    }
+    p{
+        text-align: center;
+        color: v.$blanco;
+    }
+} 
+
+.pasos{
+    &__tarjetas{
+        @include m.tablet{ 
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 4rem;
+        }
+    }
+}
+
+.tarjeta{
+    perspective: 1000px;
+    img{
+        margin: 0 auto;
+    }
+    transition: all .3s;
+    &:hover{
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+

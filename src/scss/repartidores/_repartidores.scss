@@ -1,0 +1,40 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.repartidores{
+    padding: v.$separacion 2rem;
+
+    p{
+        text-align: justify;
+        color: v.$secundario;
+        margin-top: 4rem;
+
+        @include m.tablet{ 
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    h2{
+        text-align: center;
+        color: v.$secundario;
+    }
+
+    a{
+        @include m.boton(v.$primario, v.$blanco);
+
+        @include m.tablet{ 
+            width: 25rem;
+        }
+    }
+
+
+    &__grid{
+        @include m.tablet{ 
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 4rem;
+            align-items: center;
+        }
+    }
+}

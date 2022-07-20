@@ -1,0 +1,61 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.footer{
+    background-color: v.$secundario;
+
+    &__grid{
+        text-align: center;
+        padding: v.$separacion;
+
+        @include m.tablet{ 
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2rem;
+            padding-bottom: 0;
+            text-align: justify;
+        }
+    }
+
+    &__widget{
+        margin-bottom: v.$separacion;
+        line-height: 3rem;
+        @include m.tablet{ 
+            margin-bottom:0;
+        }
+        p{
+            color: v.$blanco;
+        }
+
+        &:last-of-type{
+            margin: 0;
+        }
+    }
+
+    &__heading{
+        margin: 0;
+        color: v.$blanco;
+        text-align: center;
+    }
+
+
+    &__nav{
+        margin-top: 2rem;
+        a{
+            display: block;
+            color: v.$blanco;
+        }
+        @include m.tablet{ 
+            text-align: center;
+        }
+    }
+
+    &__pie{
+        background-color: v.$primario;
+        text-align: center;
+        margin: 0;
+        padding: 1rem;
+        color: v.$blanco;
+    }
+}
